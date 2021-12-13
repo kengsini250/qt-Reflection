@@ -16,6 +16,7 @@ public slots:
     Q_INVOKABLE void show();
     Q_INVOKABLE	void setID(int i);
     Q_INVOKABLE	int ID();
+    Q_INVOKABLE QString getText();
 private:
     int id = -1;
 

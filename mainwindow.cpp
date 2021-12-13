@@ -31,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
        {
             int currCount;
             QMetaObject::invokeMethod(obj, "ID",Q_RETURN_ARG(int,currCount));
-            qDebug()<<currCount<<": "<<str;
+            //qDebug()<<currCount<<": "<<str;
        });
 
 
@@ -49,6 +49,15 @@ MainWindow::MainWindow(QWidget *parent)
     });
 
 
+    connect(ui->pushButton_3,&QPushButton::clicked,this,[this]{
+        QString str;
+        for(auto p=all.begin();p!=all.end();p++){
+            QString tmp;
+            QMetaObject::invokeMethod(p.value(), "getText",Q_RETURN_ARG(QString,tmp));
+            str+=tmp;
+        }
+        qDebug()<<str;
+    });
 }
 
 MainWindow::~MainWindow()

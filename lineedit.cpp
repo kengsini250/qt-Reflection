@@ -29,3 +29,8 @@ int LineEdit::ID()
 {
     return id;
 }
+
+QString LineEdit::getText()
+{
+    return text();
+}
